@@ -1,0 +1,1 @@
+CREATE TABLE GAMES (name VARCHAR PRIMARY KEY, description VARCHAR, recommend BOOLEAN, time_played DECFLOAT)

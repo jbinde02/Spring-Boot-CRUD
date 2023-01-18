@@ -73,5 +73,10 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-webmvc:6.0.3" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-aop:6.0.3" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-expression:6.0.3" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-jdbc:3.0.1" level="project" />
+    <orderEntry type="library" name="Maven: com.zaxxer:HikariCP:5.0.1" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-jdbc:6.0.3" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-tx:6.0.3" level="project" />
+    <orderEntry type="library" name="Maven: com.h2database:h2:2.1.214" level="project" />
   </component>
 </module>
