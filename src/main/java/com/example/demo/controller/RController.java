@@ -1,11 +1,17 @@
 package com.example.demo.controller;
 
+import com.example.demo.database.DatabaseAccesser;
 import com.example.demo.database.Game;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class RController {
+
+    DatabaseAccesser da;
+    public RController(DatabaseAccesser da){
+        this.da = da;
+    }
     @GetMapping("/hello")
     public String hello(@RequestParam(value = "name", defaultValue = "World") String name) {
         return String.format("Hello %s!", name);
@@ -13,7 +19,7 @@ public class RController {
 
     @GetMapping("/games")
     public String listGames(){
-        return "Darktide";
+        return da.getAllGames();
     }
 
     @GetMapping("/game")
