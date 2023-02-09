@@ -23,17 +23,25 @@ public class RController {
     }
 
     @GetMapping("/game")
-    public String getGame(){
-        return "Darktide";
+    public String getGame(@RequestParam(name = "name") String gameName){
+        return da.getGame(gameName);
     }
 
-    @PostMapping(path = "games", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public String addGames(){
-        return "Darktide";
-    }
-
-    @PostMapping(path = "game", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(path = "/game", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public String addGame(@RequestBody Game gameBody){
-        return gameBody.toString();
+        boolean result = da.insertGame(gameBody);
+        return String.valueOf(result);
+    }
+
+    @PutMapping(path = "/game", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public String updateGame(@RequestBody Game gameBody){
+        boolean result = da.updateGame(gameBody);
+        return String.valueOf(result);
+    }
+
+    @DeleteMapping("/game")
+    public String deleteGame(@RequestParam(name = "name") String gameName){
+        boolean result = da.deleteGame(gameName);
+        return String.valueOf(result);
     }
 }
